@@ -19,9 +19,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_DB: ms2
-          POSTGRES_USER: ms2
-          POSTGRES_PASSWORD: S3cret
+          POSTGRES_DB: testdb
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpassword
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -50,6 +50,10 @@ jobs:
         run: mvn install -DskipTests
 
       - name: Run tests
+        env:
+          POSTGRES_DB: testdb
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpassword
         run: mvn -B test
 
       - name: Upload test results
