@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PostgresTestApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Hi");
+		System.out.println("H");
 		SpringApplication.run(PostgresTestApplication.class, args);
 	}
 
